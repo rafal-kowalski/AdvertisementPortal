@@ -1,5 +1,6 @@
 package com.example.rk.config;
 
+import com.example.rk.security.DomainUserDetailsService;
 import com.example.rk.security.jwt.JWTConfigurer;
 import com.example.rk.security.jwt.TokenProvider;
 import org.springframework.beans.factory.BeanInitializationException;
@@ -23,7 +24,7 @@ public class JWTSecurityConfig extends WebSecurityConfigurerAdapter {
     private final TokenProvider tokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
-    public JWTSecurityConfig(UserDetailsService userDetailsService, TokenProvider tokenProvider, AuthenticationManagerBuilder authenticationManagerBuilder) {
+    public JWTSecurityConfig(DomainUserDetailsService userDetailsService, TokenProvider tokenProvider, AuthenticationManagerBuilder authenticationManagerBuilder) {
         this.userDetailsService = userDetailsService;
         this.tokenProvider = tokenProvider;
         this.authenticationManagerBuilder = authenticationManagerBuilder;
